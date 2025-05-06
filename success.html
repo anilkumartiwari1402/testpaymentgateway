@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Success</title>
+  <style>
+    body {
+      background: #e0ffe0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: #2e7d32;
+    }
+    .checkmark {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+    .success-msg {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .redirect-msg {
+      font-size: 16px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkmark">✅</div>
+  <div class="success-msg">Payment Successful!</div>
+  <div class="redirect-msg">Redirecting you in 3 seconds...</div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const redrawValue = params.get('redraw') || 'default';
+    setTimeout(() => {
+      window.location.href = `redirecting.html?redraw=${redrawValue}`;
+    }, 3000);
+  </script>
+</body>
+</html>

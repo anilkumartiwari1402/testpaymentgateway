@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Gateway</title>
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .pay-btn {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(0, 114, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+    .pay-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 20px rgba(0, 114, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Payment Page</h1>
+  <button class="pay-btn" onclick="makePayment()">Pay Now</button>
+
+  <script>
+    function makePayment() {
+      // Redirect to success page with a query parameter
+      const value = '12345'; // Example value
+      window.location.href = `success.html?redraw=${value}`;
+    }
+  </script>
+</body>
+</html>

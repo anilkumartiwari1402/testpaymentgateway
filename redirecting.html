@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Final Page</title>
+  <style>
+    body {
+      background: #fff8e1;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: #ff6f00;
+    }
+    .title {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+    .param {
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">You’ve been redirected!</div>
+  <div class="param">Query Param <strong>redraw</strong>: <span id="value"></span></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const redrawValue = params.get('redraw');
+    document.getElementById("value").textContent = redrawValue;
+  </script>
+</body>
+</html>
